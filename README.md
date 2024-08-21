@@ -6,7 +6,7 @@
 > Curso: Programación Web en PHP y MySQL |    
 > Miércoles y Viernes 10hs a 13hs |  
 > Desde 21/08 hasta 04/10  |  
-> 20 clases |  
+> 14 clases |  
 > Código 73534 |    
 > sensei: Marcos Pinardi |    
 
