@@ -4,9 +4,9 @@
     <main class="container py-3">
         <h1>Tema de la página</h1>
 
-        <p>
+        <article class="shadow alert my3">
             contenido de la página
-        </p>
+        </article>
     </main>
 <?php
     include '../layouts/footer.php';

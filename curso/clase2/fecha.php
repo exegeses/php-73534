@@ -11,7 +11,31 @@ include '../layouts/header.php';
      */
     $diaSemana = date('w'); // date('l')
 
-    // date('d/m/Y');
+    switch ($diaSemana) {
+        case 0:
+            echo "Domingo";
+            break;
+        case 1:
+            echo "Lunes";
+            break;
+        case 2:
+            echo "Martes";
+            break;
+        case 3:
+            echo "Miércoles";
+                break;
+        case 4:
+            echo "Jueves";
+            break;
+        case 5:
+            echo "Viernes";
+            break;
+        case 6:
+            echo "Sabado";
+            break;
+   }
+    echo date (" d/m/Y")
+    ?>
 ?>
         </article>
 
