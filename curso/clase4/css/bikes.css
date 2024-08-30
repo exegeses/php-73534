@@ -1,0 +1,21 @@
+section {
+    display: grid;
+    grid-template-columns: 4fr;
+    gap: 24px;
+}
+    article img{
+        width: 100%;
+    }
+@media screen and (max-width: 1024px) {
+    section {
+        grid-template-columns: 3fr;
+    }
+}@media screen and (max-width: 768px) {
+    section {
+        grid-template-columns: 2fr;
+    }
+}@media screen and (max-width: 640px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+}
