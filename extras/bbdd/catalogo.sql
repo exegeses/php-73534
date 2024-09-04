@@ -21,7 +21,7 @@ CREATE TABLE `marcas` (
   PRIMARY KEY (`idMarca`),
   UNIQUE KEY `marcas_mknombre_unique` (`mkNombre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `marcas`
@@ -45,7 +45,7 @@ CREATE TABLE `productos` (
   CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categorias` (`idCategoria`),
   CONSTRAINT `productos_idmarca_foreign` FOREIGN KEY (`idMarca`) REFERENCES `marcas` (`idMarca`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `productos`
