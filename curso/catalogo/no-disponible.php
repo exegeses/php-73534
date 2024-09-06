@@ -5,10 +5,10 @@
 ?>
 
     <main class="container py-4">
-        <h1>Tema de la página</h1>
+        <h1>¡Advertencia!</h1>
 
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nam repellat soluta.
+            Servidor no disponible, intente nuvamente más tard
         </p>
     </main>
 
