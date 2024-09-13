@@ -12,6 +12,23 @@
         return mysqli_query( $link, $sql );
     }
 
+    function verProductoPorID() : array
+    {
+        $idProducto = $_GET['idProducto'];
+        $link = conectar();
+        $sql  = "SELECT * 
+                    FROM productos p
+                    JOIN marcas m 
+                      ON m.idMarca = p.idMarca
+                    JOIN categorias c 
+                      ON c.idCategoria = p.idCategoria
+                    WHERE idProducto = ".$idProducto;
+        $resultado = mysqli_query( $link, $sql );
+        return mysqli_fetch_assoc( $resultado );
+    }
+
+
+
     function subirImagen() : string
     {
         // si no se envió imagen
