@@ -66,6 +66,20 @@ function checkProductoXMarca() : int
     return mysqli_num_rows( $resultado );
 }
 
+function eliminarMarca() : bool
+{
+    $idMarca = $_GET['idMarca'];
+    $link = conectar();
+    $sql = "DELETE FROM marcas
+                WHERE idMarca = ".$idMarca;
+    try {
+        return mysqli_query( $link, $sql );
+    }catch ( Exception $e ){
+        //log de errores/excepcioones
+        return false;
+    }
+}
+
 /*
  * listarMarcas()
  * verMarcaPorID()
