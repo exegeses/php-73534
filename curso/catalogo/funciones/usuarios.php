@@ -1,5 +1,16 @@
 <?php
 
+    function listarUsuarios() : mysqli_result
+    {
+        $link = conectar();
+        $sql = "SELECT * 
+                    FROM usuarios
+                    JOIN roles r 
+                    ON usuarios.idRol = r.idRol
+                  WHERE activo = 1";
+        return mysqli_query($link, $sql);
+    }
+
     function registrarUsuario() : bool
     {
         $nombre = $_POST['nombre'];
