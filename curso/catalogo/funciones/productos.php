@@ -8,7 +8,8 @@
                     JOIN marcas m 
                       ON m.idMarca = p.idMarca
                     JOIN categorias c 
-                      ON c.idCategoria = p.idCategoria";
+                      ON c.idCategoria = p.idCategoria
+                    WHERE prdActivo = 1";
         return mysqli_query( $link, $sql );
     }
 
@@ -108,6 +109,23 @@
                         prdImagen = '".$prdImagen."'
                     WHERE idProducto = ".$idProducto;
 
+        try {
+            return mysqli_query($link, $sql);
+        }catch ( Exception $e ){
+            // echo $e->getMessage();
+            return false;
+        }
+    }
+
+    function eliminarProducto() : bool
+    {
+        $idProducto =  $_POST['idProducto'];
+        $link = conectar();
+        /* $sql = "DELETE FROM productos
+                  WHERE idProducto = ".$idProducto; */
+        $sql = "UPDATE productos
+                    SET prdActivo = 0
+                  WHERE idProducto = ".$idProducto;
         try {
             return mysqli_query($link, $sql);
         }catch ( Exception $e ){
