@@ -24,7 +24,7 @@
                     <th>Email</th>
                     <th>Rol</th>
                     <th colspan="2">
-                        <a href="registrarUsuario.php" class="btn btn-outline-secondary">
+                        <a href="formAgregarUsuario.php" class="btn btn-outline-secondary">
                             Agregar
                         </a>
                     </th>
