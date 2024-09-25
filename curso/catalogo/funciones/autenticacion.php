@@ -47,8 +47,15 @@
         header('location: admin.php');
     }
 
-    function logout()
-    {}
+    function logout() : void
+    {
+        //Eliminamos variables de sesión (opcional)
+        session_unset();
+        //Eliminamos la sesión
+        session_destroy();
+        // redirección con delay
+        header('refresh:3;url=index.php');
+    }
 
     function autenticar()
     {}
