@@ -1,6 +1,9 @@
 <?php
 
-    //require 'config/config.php';
+    require 'config/config.php';
+    require 'funciones/autenticacion.php';
+        autenticar();
+        checkAdmin();
     require 'funciones/conexion.php';
     require 'funciones/usuarios.php';
     $usuarios = listarUsuarios();

@@ -57,8 +57,18 @@
         header('refresh:3;url=index.php');
     }
 
-    function autenticar()
-    {}
+    function autenticar() : void
+    {
+        if( !isset($_SESSION['login']) ){
+            //Redirección a formLogin.php + mensaje de error
+            header('location: formLogin.php?error=2');
+        }
+    }
 
-    function checkAdmin()
-    {}
+    function checkAdmin() : void
+    {
+        // Si el usuario no es administrador
+        if( $_SESSION['idRol'] != 1 ){
+           header('location: no-admin.php');
+        }
+    }
