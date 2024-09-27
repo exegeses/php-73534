@@ -11,6 +11,20 @@
         return mysqli_query($link, $sql);
     }
 
+    function verUsuarioPorID() : array
+    {
+        $idUsuario = $_GET['idUsuario'];
+        $link = conectar();
+        $sql = "SELECT * 
+                    FROM usuarios
+                    JOIN roles r 
+                    ON usuarios.idRol = r.idRol
+                  WHERE activo = 1 
+                    AND idUsuario = ".$idUsuario;
+        $resultado = mysqli_query($link, $sql);
+        return mysqli_fetch_assoc($resultado);
+    }
+
     function registrarUsuario() : bool
     {
         $nombre = $_POST['nombre'];
@@ -108,4 +122,27 @@
             return false;
         }
 
+    }
+
+    function modificarUsuario() : bool
+    {
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email'];
+        $idRol = $_POST['idRol'];
+        $idUsuario = $_POST['idUsuario'];
+        $link = conectar();
+        $sql = "UPDATE usuarios 
+                  SET 
+                          nombre = '".$nombre."', 
+                          apellido = '".$apellido."',
+                          email = '".$email."',
+                          idRol = ".$idRol."
+                  WHERE   idUsuario = ". $idUsuario;
+        try{
+            return mysqli_query($link, $sql);
+        }
+        catch ( Exception $e ){
+            return false;
+        }
     }
